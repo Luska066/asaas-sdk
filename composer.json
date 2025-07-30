@@ -24,6 +24,7 @@
         "illuminate/filesystem": "^12.20",
         "illuminate/log": "^12.20",
         "illuminate/validation": "^12.20",
+        "ramsey/uuid": "^4.9"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.5",

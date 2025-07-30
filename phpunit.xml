@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-        backupGlobals="false"
-        backupStaticAttributes="false"
-        bootstrap="vendor/autoload.php"
-        colors="true"
-        verbose="true"
-        stopOnFailure="false"
-        failOnWarning="false"
-        failOnRisky="false"
-        executionOrder="random"
->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         executionOrder="random"
+         failOnDeprecation="false"
+         failOnWarning="false"
+         failOnRisky="false"
+         stopOnFailure="false"
+         testdox="true"
+         >
+
     <testsuites>
         <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+            <directory suffix="Test.php">tests/Feature</directory>
         </testsuite>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+            <directory suffix="Test.php">tests/Unit</directory>
         </testsuite>
     </testsuites>
 
