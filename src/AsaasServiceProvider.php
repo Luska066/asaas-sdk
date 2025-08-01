@@ -4,7 +4,7 @@ namespace Luska066\LaravelAsaas;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\ServiceProvider;
-use Luska066\LaravelAsaas\Factory\HttpAsaasFactory;
+use Luska066\LaravelAsaas\Infra\Factory\HttpAsaasFactory;
 
 class AsaasServiceProvider extends ServiceProvider
 {

@@ -9,6 +9,7 @@
          failOnRisky="false"
          stopOnFailure="false"
          testdox="true"
+         stderr="true"
          >
 
     <testsuites>

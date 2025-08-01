@@ -10,7 +10,7 @@ class Uuid
 
     public function __construct(string $uuid)
     {
-        $this->uuid = empty($uuid) ? UuidPkg::uuid7()->toString() : $uuid;
+        $this->uuid = empty($uuid) ? UuidPkg::uuid4()->toString() : $uuid;
         if (!UuidPkg::isValid($this->uuid)) {
             throw new \Exception('Uuid Is Inválid, required uuid7() ramsey/uuid');
         };
