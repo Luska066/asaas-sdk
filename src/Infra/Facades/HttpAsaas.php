@@ -7,7 +7,7 @@ use Luska066\LaravelAsaas\Core\Shared\Enums\HttpsMethods;
 use Luska066\LaravelAsaas\Infra\Factory\HttpAsaasFactory;
 
 /**
- * @method static HttpAsaasFactory request(HttpsMethods $method,string $uri, array $query = [])
+ * @method static array request(HttpsMethods $method,string $uri, array $query = []): array
  * @method static HttpAsaasFactory getHttpInstance()
  * @method static HttpAsaasFactory getConfig()
  */

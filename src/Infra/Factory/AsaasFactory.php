@@ -7,16 +7,10 @@ class AsaasFactory
     static function customer(){
 
     }
-    static function subscription(){
-
-    }
-    static function creditCard(){
-
-    }
     static function charge(){
 
     }
-    static function reversal(){
+    static function subscription(){
 
     }
 }

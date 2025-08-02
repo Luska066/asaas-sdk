@@ -15,7 +15,7 @@
     "require": {
         "php": "^8.4",
         "guzzlehttp/guzzle": "^7.9",
-        "illuminate/support": "^12.20",
+        "illuminate/support": "^12.21",
         "illuminate/container": "^12.20",
         "illuminate/config": "^12.20",
         "illuminate/http": "^12.20",
@@ -23,11 +23,21 @@
         "illuminate/events": "^12.20",
         "illuminate/filesystem": "^12.20",
         "illuminate/log": "^12.20",
-        "illuminate/validation": "^12.20",
-        "ramsey/uuid": "^4.9"
+        "illuminate/validation": "^12.21",
+        "ramsey/uuid": "^4.9",
+        "illuminate/routing": "^12.21",
+        "illuminate/auth": "^12.21",
+        "laravel/framework": "^12.21"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.5",
         "codedungeon/phpunit-result-printer": "^0.1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Luska066\\LaravelAsaas\\AsaasServiceProvider"
+            ]
+        }
     }
 }

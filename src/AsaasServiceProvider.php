@@ -10,35 +10,35 @@ class AsaasServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-//        $src = realpath($raw = __DIR__ . '/../config/asaas.php') ?: $raw;
-//
-//        if ($this->app->runningInConsole()) {
-//            $this->publishes([$src => config_path('asaas.php')], 'config');
-//            $this->commands([
-//                AsaasInstallPackage::class,
-//            ]);
-//        }
-//
-//        $this->mergeConfigFrom($src, 'asaas');
+        // Publish configuration
+        $src = realpath($raw = __DIR__ . '/../config/asaas.php') ?: $raw;
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([$src => config_path('asaas.php')], 'config');
+            // Uncomment if you have installation commands
+            // $this->commands([AsaasInstallPackage::class]);
+        }
+
+        $this->mergeConfigFrom($src, 'asaas');
+
+        // Load API routes
+        $this->loadRoutesFrom(__DIR__.'/Http/Routes/api.php');
     }
 
     public function register(): void
     {
-        $this->app->singleton('luska066.api.asaas', function (Container $app) {
+        $this->app->singleton('luska066.asaas.api', function (Container $app) {
             return new HttpAsaasFactory($app['config']['asaas'] ?? []);
         });
-//        $this->app->singleton('jetimob.asaas', function (Container $app) {
-//            return new Asaas($app['config']['asaas'] ?? []);
-//        });
-//
-//        $this->app->alias('jetimob.asaas', Asaas::class);
+
+        // Register controller
+        $this->app->make('Luska066\LaravelAsaas\Http\Controllers\Customer\CustomerController');
     }
 
     public function provides(): array
     {
         return [
-            'luska066.laravel-asaas',
-            'luska066.api.asaas',
+            'luska066.asaas.api',
         ];
     }
 }
